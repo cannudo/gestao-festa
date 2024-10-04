@@ -1,15 +1,38 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 
 <head>
-    <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width"/>
-    <title>Lista de Convidados</title>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width" />
+	<title>Lista de Convidados</title>
 </head>
 
 <body>
-	<h1>AlgaWorks</h1>
-	<p>Olá, mundo!</p>
+	<div class="panel panel-default" style="margin: 10px;">
+		<div class="panel-heading">
+			<h1>Lista de Convidados</h1>
+		</div>
+		<div class="panel-body">
+			<table class="table">
+				<thead>
+					<tr>
+						<th>Nome</th>
+						<th>Quantidade de Acompanhantes</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>João (estático)</td>
+						<td>2 (estático)</td>
+					</tr>
+					<tr th:each="convidado : ${convidados}">
+						<td th:text="${convidado.nome}"></td>
+						<td th:text="${convidado.quantidadeAcompanhantes}"></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
 </body>
+
 </html>
